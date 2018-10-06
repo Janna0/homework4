@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<h1 id = 'check0'></h1>
+<h1 id = 'check1'></h1>
+<h1 id = 'check2'></h1>
+<h1 id = 'check3'></h1>
+<h1 id = 'check4'></h1>
+<h1 id = 'check5'></h1>
+<h1 id = 'check6'></h1>
+<h1 id = 'check7'></h1>
+<h1 id = 'check8'></h1>
+<h1 id = 'check9'></h1>
+<h1 id = 'check10'></h1>
+
+
+<script>
+
+
+
+
+
+
+// part 2
+const an1=prompt("Input the size of the triangle");
+const triangleStars = function (h){
+	let space = 0;
+	let spc = 1; 
+	let i2 = 0;
+	let i = 0;
+	let sta = 0;
+	let a = (h-1)*2+1;
+	const arr = [];
+	let sarr = [];
+	
+	while(i<h){
+
+		const b = a;
+		arr[arr.length] = a;
+
+			while(space<spc){
+			sarr = sarr + ' ' ;
+			space++;
+			}
+			spc ++;
+			space = 0;
+			while(i2<arr[sta]){
+				sarr = sarr + '*' ;
+				i2++;
+				
+				
+				}
+			sta++;
+			i2 = 0;
+		console.log(sarr);
+		sarr = [];
+		i ++;
+		a -= 2;
+	
+		}
+	
+	};
+
+triangleStars(an1);
+
+
+
+
+
+
+// part 3
+const multiToSingle = function(mAr){
+	const m = [];
+	let first = 0;
+	let second = 0;
+	
+		while(first < mAr.length){
+			
+			while(second < mAr[first].length){
+			m[m.length] = mAr[first][second];
+			second++;
+			
+			
+				}
+			second = 0;
+			first++;
+			
+			}
+			
+			console.log(m);
+	};
+
+
+//multiToSingle([[12,10,6],[4,7,9]]);
+
+
+
+// part 4
+
+
+const findMinMax = function (arr,arg){
+
+	if(arg === true){
+
+		while(arr.length>1){
+
+			if(arr[arr.length-1]>arr[arr.length-2]){
+				delete arr[arr.length-2];
+				arr[arr.length-2] = arr[arr.length-1];
+				arr.splice([arr.length-1]);
+				
+				
+			}
+
+			else if(arr[arr.length-1]<arr[arr.length-2] || arr[arr.length-1] === arr[arr.length-2]){
+				arr.splice([arr.length-1]);
+			}
+
+			
+
+		}
+
+	}
+
+	else if(arg === false){
+
+while(arr.length > 1){
+
+			if(arr[arr.length-1]>arr[arr.length-2]){
+				arr.splice([arr.length-1]);
+				
+				
+			}
+
+			else if(arr[arr.length-1] < arr[arr.length-2] || arr[arr.length-1] === arr[arr.length-2]){
+				delete arr[arr.length-2];
+				arr[arr.length-2] = arr[arr.length-1];
+				arr.splice([arr.length-1]);
+			}
+
+			
+
+		}
+
+
+	}
+
+				var min = arr[0];
+				console.log(min);
+
+};
+
+
+//findMinMax([4345, 4562, 66, 15, 15], false);
+
+
+
+// part 5
+
+const forEach = function (array, ble){
+	let fC = 0;
+	let num = 0;
+	while(fC < array.length){
+
+		ble(array[num]);
+
+		fC++;
+		num++;
+		}
+
+	};
+
+	const value = function (val){
+	console.log(val);
+};
+
+//forEach([4, 3, 2,6,7,4], value);
+
+ 
+
+
+ // part 6
+
+ const sum = function (arN){
+	let num = 0;
+	let su = 0;
+	while(num<arN.length){
+
+		su = su + arN[num];
+		num++;
+		}
+
+	console.log(su);
+	 };
+
+//	 sum([4, 3, 2,10]);
+
+
+
+// part 7
+
+
+const arr = 'abc';
+
+const reverse= function(string){
+	let x = 1;
+	let y = 0;
+	let str = '';
+	while(x<=string.length){
+
+		str = str + string[string.length-x];
+		x++;
+		y++;
+
+		}
+	return str ; 
+};
+
+
+//console.log(reverse('abc'));
+
+
+
+
+
+// part 8
+
+
+
+const an2=prompt("Input the size of the checkerboard (smaller than 10 ^^)");
+const checkerboard  = function (h){
+	
+	
+
+let ch = [];
+let n = 0;
+let sarr = '';
+let b = 0;
+let e = 0 ;
+while(b < h){
+
+
+while(n < h){
+
+sarr = sarr + '*' ;
+
+n++;
+}
+	n = 0;
+	b++;
+	
+	document.getElementById("check"+e).innerHTML = ' '+sarr+' ';
+		e++;
+	sarr = '';
+}
+	
+	};
+
+checkerboard (an2);
+</script>
+
+</body>
+</html>
